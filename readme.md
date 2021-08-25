@@ -1,4 +1,12 @@
-# CentOS 
+# 离线安装
+
+执行初始化脚本, 将依赖包对应的软件版本下载到本地.  
+```
+git clone https://github.com/shukean/centos-dev-env.git
+cd centos-dev-env
+sh download.sh
+```
+
 上传 centos-dev-env 包到 $HOME 目录下.
 ``` bash
 cd $HOME/centos-dev-env
@@ -131,7 +139,8 @@ make -j12 && make install
 
 ## Install Vim Plugin
 ``` bash
-tar -xf vim-plugs.tar.gz
+cd vim-plugs
+sh download_plug.sh
 
 # Install YouCompleteMe
 cd vim-plugs/plugged/YouCompleteMe
