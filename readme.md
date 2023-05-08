@@ -110,6 +110,11 @@ cd fzf
 ./install --all
 ```
 
+快速安装:  
+``` bash
+wget https://github.com/junegunn/fzf/releases/download/0.27.2/fzf-0.27.2-linux_amd64.tar.gz
+```
+
 ## Install  vim-8.1.2424
 
 解压后安装:  
@@ -201,7 +206,7 @@ git submodule update --init --recursive
 下载  https://github.com/ycm-core/llvm/releases/download/12.0.0/libclang-12.0.0-x86_64-unknown-linux-gnu.tar.bz2  
 将下载的文件移动到 YouCompleteMe/third_party/ycmd/clang_archives 目录下.  
 
-> 需要主要 sha256 值一样.  
+> 需要 sha256 值一样.  
 
 
 

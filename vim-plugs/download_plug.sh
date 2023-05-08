@@ -4,9 +4,13 @@ set -x
 set -e
 
 function clone() {
-    git clone git@github.com:$1.git
+    #git clone git@github.com:$1.git
+    git clone https://github.com/$1.git
     if [ ! -z "$2" ]; then
+        dir=`echo $1 | cut -d/ -f2`
+        cd $dir
         git checkout $2
+        cd -
     fi
 }
 
@@ -30,6 +34,8 @@ git submodule update --init --recursive
 
 wget -O absl.tar.gz https://github.com/abseil/abseil-cpp/archive/refs/tags/20210324.2.tar.gz
 tar xf absl.tar.gz
+mv abseil-cpp-20210324.2 absl
+rm -f absl.tar.gz
 rm -rf ./third_party/ycmd/cpp/absl
 mv absl ./third_party/ycmd/cpp/
 
