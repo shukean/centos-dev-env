@@ -1,17 +1,21 @@
-LOCAL_PATH=$HOME/.local
+#!/bin/bash
 
-export PATH=$LOCAL_PATH/python/3.8.11/bin:$PATH
-export PATH=$LOCAL_PATH/go/bin:$PATH
-export PATH=$LOCAL_PATH/the_silver_searcher/bin:$PATH
-export PATH=$LOCAL_PATH/vim/bin:$PATH
-export PATH=$LOCAL_PATH/cmake/3.20.5/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
+export LESSCHARSET=utf-8        # show Chinese normal in git log
+export TMOUT=864000
+export PS1='[\u@\H \w]'
 
+ulimit -c unlimited
+ulimit -s 16777216
 
+shopt -s expand_aliases
 
-#export LESSCHARSET=utf-8        # show Chinese normal in git log
-#export TMOUT=864000
-#export PS1='[\u@\H \w]'
+alias gits="git status"
+alias git_push_branch="git branch | grep '*' | head -n1 | cut -d' ' -f2 | xargs -i git push origin HEAD:refs/for/{}"
 
-#alias gits="git status"
-#alias shttp="hostname -i; python3 -m SimpleHTTPServer 8989"
+alias gdb="$HOME/.local/gdb-12.1/bin/gdb"
+
+alias shttp="hostname -i; python3 -m http.server 8989"
+
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore-dir=build --ignore-dir=man --ignore-dir=unittest --ignore-dir=testclients --ignore-dir=Docs --ignore-dir=mysql-test --ignore-dir=extra --ignore-dir=storage/ndb} -l -g ""'

@@ -86,6 +86,10 @@ get_python_inc(),
 'cpp/ycm/tests/gmock/googletest/include',
 '-isystem',
 'cpp/ycm/benchmarks/benchmark/include',
+'-isystem',
+'/opt/compiler/gcc-12/include',
+'-isystem',
+'/usr/include',
 '-std=c++17',
 ]
 
@@ -104,7 +108,7 @@ compilation_database_folder = ''
 
 def IsHeaderFile( filename ):
   extension = p.splitext( filename )[ 1 ]
-  return extension in [ '.h', '.hxx', '.hpp', '.hh' ]
+  return extension in [ '.h', '.hxx', '.hpp', '.hh', '.ic' ]
 
 
 def FindCorrespondingSourceFile( filename ):

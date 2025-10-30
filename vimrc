@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdcommenter' "shift+v+方向键选中(默认当前行)   ->  
 Plug 'Raimondi/delimitMate' "括号补全
 Plug 'bling/vim-airline' "状态  :bd 关闭tab
 Plug 'vim-airline/vim-airline-themes'
+Plug 'zivyangll/git-blame.vim'
 Plug 'rondale-sc/vim-spacejam' " 去除空格
 Plug 'derekwyatt/vim-fswitch'  " 头文件和实现切换 :FSHere
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -169,20 +170,58 @@ let g:airline_theme = 'soda'
 "autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 autocmd FileType python setlocal ts=4 sw=4 sts=4 expandtab
 
-
 "fix crontab
 autocmd filetype crontab setlocal nobackup nowritebackup
-
 
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_command_prefix = 'Fzf'
-let g:fzf_tags_command = 'ctags -R --exclude=.git --exclude=test --exclude=output'
+let g:fzf_tags_command = 'ctags -R --langmap=c++:+.ic --exclude=.git --exclude=test --exclude=output --exclude=build'
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '~25%' }
+
 nnoremap <silent> <C-p> :FzfFiles<CR>
 nnoremap <leader>a :FzfAg<CR>
 nnoremap <leader>t :FzfTags<CR>
 nnoremap <leader>f :FzfFiles<CR>
 nnoremap <leader>b :FzfBuffers<CR>
 nnoremap <leader>l :FzfLines<CR>
+
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
+function! SetTab(n)
+    let &shiftwidth = a:n
+    let &tabstop = a:n
+    let &softtabstop = a:n
+endfunction
+
+command Settab2 call SetTab(2)
+command Settab4 call SetTab(4)
+
+function! CheckTab2()
+    let l:current_dir = getcwd()
+    if l:current_dir =~ 'mysql'
+        call SetTab(2)
+    else
+        call SetTab(4)
+    endif
+endfunction
+
+autocmd BufRead,BufNewFile * call CheckTab2()
+
+function! CopyrightTitle()
+    call append(0, "/***************************************************************************")
+    call append(1, "* Copyright (c) xxxxx.com, Inc. All Rights Reserved")
+    call append(2, "**************************************************************************/")
+    call append(3, "/**")
+    call append(4, "* @file ".expand("%"))
+    call append(5, "* @author yukeyong@xxxx.com")
+    call append(6, "* @brief")
+    call append(7, "*/")
+    call append(8, "")
+    call append(9, "#pragma once")
+    echohl WarningMsg | echo "Add copyright msg." | echohl None
+endfunction
+
+nnoremap <leader>h :call CopyrightTitle()<CR>
+
