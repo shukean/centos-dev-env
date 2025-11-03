@@ -18,11 +18,11 @@ tar -xf centos-dev-env.tar.gz  -C ~/
 cd ~/centos-dev-env
 # 创建软件安装目录
 mkdir local
-# 按照对应的系统软件包, 需要 root 权限
+# 安装对应的系统软件包, 需要 root 权限
 sh yum.sh
 ```
 
-### 开始编译和按照依赖
+### 开始编译和安装依赖
 ``` bash
 
 # 编辑 cc.cfg  文件, 修改对应的 gcc 和 g++ 信息
@@ -35,6 +35,7 @@ sh bzip2-1.0.8.sh
 sh Python-3.8.11.sh
 
 # 编译 fzf 查询文件相关的 vim 插件
+sh go1.23.12.sh
 sh the_silver_searcher-2.2.0.sh
 sh fzf-0.56.3.sh
 
