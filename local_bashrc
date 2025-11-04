@@ -18,4 +18,4 @@ alias gdb="$HOME/.local/gdb-12.1/bin/gdb"
 
 alias shttp="hostname -i; python3 -m http.server 8989"
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore-dir=build --ignore-dir=man --ignore-dir=unittest --ignore-dir=testclients --ignore-dir=Docs --ignore-dir=mysql-test --ignore-dir=extra --ignore-dir=storage/ndb} -l -g ""'
+export FZF_DEFAULT_COMMAND="ag --color -l -g -p $HOME/.local/ag_ignore -S -U \"\""

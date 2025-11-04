@@ -36,7 +36,9 @@ sh Python-3.8.11.sh
 
 # 编译 fzf 查询文件相关的 vim 插件
 sh go1.23.12.sh
-sh the_silver_searcher-2.2.0.sh
+#sh the_silver_searcher-2.2.0.sh
+sh the_silver_searcher-1.0.0.sh
+sh ripgrep-15.1.0.sh
 sh fzf-0.56.3.sh
 
 # 编译支持python的 vim

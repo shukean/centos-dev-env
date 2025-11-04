@@ -30,6 +30,9 @@ down_pkg Python-3.8.11.tar.xz https://www.python.org/ftp/python/3.8.11/Python-3.
 
 # the_silver_searcher-2.2.0
 down_pkg the_silver_searcher-2.2.0.tar.gz https://geoff.greer.fm/ag/releases/the_silver_searcher-2.2.0.tar.gz
+download_plug the_silver_searcher-1.0.0.tar.gz https://github.com/shukean/the_silver_searcher/archive/refs/tags/v1.0.0.tar.gz
+
+down_pkg ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz
 
 down_pkg perl-5.42.0.tar.gz https://www.cpan.org/src/5.0/perl-5.42.0.tar.gz
 

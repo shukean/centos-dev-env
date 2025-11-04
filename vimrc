@@ -182,6 +182,7 @@ let g:fzf_layout = { 'down': '~25%' }
 
 nnoremap <silent> <C-p> :FzfFiles<CR>
 nnoremap <leader>a :FzfAg<CR>
+nnoremap <leader>r :FzfRg<CR>
 nnoremap <leader>t :FzfTags<CR>
 nnoremap <leader>f :FzfFiles<CR>
 nnoremap <leader>b :FzfBuffers<CR>
