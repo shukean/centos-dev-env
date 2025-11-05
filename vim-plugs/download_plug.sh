@@ -35,7 +35,7 @@ clone preservim/nerdtree 690d061b591525890f1471c6675bcb5bdc8cdff9
 clone preservim/tagbar 7bfffca1f121afb7a9e38747500bf5270e006bb1
 clone vim-airline/vim-airline 159573187e9996d06cf26e49a533f424f4d70b43
 clone vim-airline/vim-airline-themes 77aab8c6cf7179ddb8a05741da7e358a86b2c3ab
-clone shukean/vim-fswitch b4bfbae2bba8651588f5801fac44639381123350
+clone shukean/vim-fswitch 5510323db32c2ff8677efe0ba14f6903647f9dd0
 clone rondale-sc/vim-spacejam cdaa007868b5781b5d86c336c24c6276c3795387
 clone bronson/vim-trailing-whitespace 5540b3faa2288b226a8d9a4e8244558b12c598aa
 clone ycm-core/YouCompleteMe 518275b599ab6dd7844c24022f6aec505fb4b07c
