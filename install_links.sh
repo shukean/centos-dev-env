@@ -62,4 +62,6 @@ if [[ $? -ne 0 ]]; then
     echo "[ -f $WORK_PATH/.local/bashrc ] && source $WORK_PATH/.local/bashrc" >> $WORK_PATH/.bashrc
 fi
 
+git config --global core.editor "vim"
+
 echo "source $WORK_PATH/.local/bashrc"
