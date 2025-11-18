@@ -14,8 +14,8 @@ shopt -s expand_aliases
 alias gits="git status"
 alias git_push_branch="git branch | grep '*' | head -n1 | cut -d' ' -f2 | xargs -i git push origin HEAD:refs/for/{}"
 
-alias gdb="$HOME/.local/gdb-12.1/bin/gdb"
+#alias gdb="$HOME/.local/gdb-12.1/bin/gdb"
 
 alias shttp="hostname -i; python3 -m http.server 8989"
 
-export FZF_DEFAULT_COMMAND="ag -S -U ''"
+export FZF_DEFAULT_COMMAND="ag -l --nocolor"

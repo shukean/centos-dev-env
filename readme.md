@@ -16,8 +16,13 @@ tar -zcf centos-dev-env.tar.gz centos-dev-env
 ``` bash
 tar -xf centos-dev-env.tar.gz  -C ~/
 cd ~/centos-dev-env
+
 # 创建软件安装目录
 mkdir local
+
+# 进入编译目录
+cd build
+
 # 安装对应的系统软件包, 需要 root 权限
 sh yum.sh
 ```
@@ -44,6 +49,10 @@ sh fzf-0.56.3.sh
 # 编译支持python的 vim
 sh vim-8.1.2424.sh
 
+# 编译 openssl
+sh openssl-1.1.1w.sh
+# cmake 在安装多个openssl时可能无法正确找到对应的版本,使用本安装可避免该问题
+
 # 编译 YouCompleteMe 依赖的 cmake 版本
 sh cmake-3.14.7.sh
 
@@ -59,4 +68,10 @@ sh install_links.sh
 source ~/.fzf.bash
 source ~/.local/bashrc
 
+```
+
+### 编译 gdb
+```bash
+cd ~/centos-dev-env/build
+sh gdb-12.1.sh
 ```

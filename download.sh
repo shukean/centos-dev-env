@@ -9,6 +9,9 @@ down_pkg() {
     fi
 }
 
+# openssl
+down_pkg openssl-1.1.1w.tar.gz https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz
+
 # cmake
 down_pkg cmake-3.14.7.tar.gz https://github.com/Kitware/CMake/releases/download/v3.14.7/cmake-3.14.7.tar.gz
 
@@ -18,6 +21,9 @@ down_pkg fzf-0.56.3-linux_amd64.tar.gz  https://github.com/junegunn/fzf/releases
 
 # bzip2
 down_pkg bzip2-1.0.8.tar.gz https://fossies.org/linux/misc/bzip2-1.0.8.tar.gz
+
+# gdb
+down_pkg gdb-12.1.tar.xz https://ftp.gnu.org/gnu/gdb/gdb-12.1.tar.xz
 
 # go
 down_pkg go1.23.12.linux-amd64.tar.gz https://golang.org/dl/go1.23.12.linux-amd64.tar.gz
@@ -30,7 +36,7 @@ down_pkg Python-3.8.11.tar.xz https://www.python.org/ftp/python/3.8.11/Python-3.
 
 # the_silver_searcher-2.2.0
 down_pkg the_silver_searcher-2.2.0.tar.gz https://geoff.greer.fm/ag/releases/the_silver_searcher-2.2.0.tar.gz
-download_plug the_silver_searcher-1.0.0.tar.gz https://github.com/shukean/the_silver_searcher/archive/refs/tags/v1.0.0.tar.gz
+down_pkg the_silver_searcher-1.0.0.tar.gz https://github.com/shukean/the_silver_searcher/archive/refs/tags/v1.0.0.tar.gz
 
 down_pkg ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz
 

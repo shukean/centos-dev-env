@@ -15,7 +15,11 @@ do_link_dir_or_file() {
     src=$1
     dst=$2
     if [ -f $dst -o -d $dst ]; then
-	realf=`readlink $dst`
+        if [ ! -L $dst ]; then
+            echo "ln -s $src $dst failed, $dst exists"
+            exit 1
+        fi
+	    realf=`readlink $dst`
         if [ "x$realf" = "x$src" ]; then
             return 0
         else
