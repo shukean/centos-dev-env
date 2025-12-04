@@ -9,12 +9,11 @@ export PS1='[\u@\H \w]'
 ulimit -c unlimited
 ulimit -s 16777216
 
-shopt -s expand_aliases
+shopt -s expand_aliases     # enable alias
+export LESS=-r       # git diff word
 
 alias gits="git status"
 alias git_push_branch="git branch | grep '*' | head -n1 | cut -d' ' -f2 | xargs -i git push origin HEAD:refs/for/{}"
-
-#alias gdb="$HOME/.local/gdb-12.1/bin/gdb"
 
 alias shttp="hostname -i; python3 -m http.server 8989"
 

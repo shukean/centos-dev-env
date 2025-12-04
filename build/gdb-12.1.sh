@@ -14,3 +14,5 @@ ln -s $BIN_PATH/gdb/bin/gdb $HOME/.local/bin/gdb
 ln -s $BIN_PATH/gdb/bin/gcore $HOME/.local/bin/gcore
 
 ln -s $(dirname $BUILD_PATH)/gdbinit $HOME/.gdbinit
+
+echo "\nalias gdb=\"$HOME/.local/gdb-12.1/bin/gdb\"" >> $BUILD_PATH/local_bashrc
