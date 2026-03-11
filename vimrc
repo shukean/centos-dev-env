@@ -191,6 +191,8 @@ nnoremap <leader>l :FzfLines<CR>
 
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
+au BufRead,BufNewFile *.ic setfiletype cpp
+
 function! SetTab(n)
     let &shiftwidth = a:n
     let &tabstop = a:n

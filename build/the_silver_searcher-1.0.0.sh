@@ -4,6 +4,7 @@ source ./path.cfg
 
 tar -xf ../the_silver_searcher-1.0.0.tar.gz  -C ./
 cd the_silver_searcher-1.0.0
+sh autogen.sh
 ./configure --prefix=$BIN_PATH/the_silver_searcher  \
 PCRE_LIBS="-lpcre -llzma"  \
 CPPFLAGS="-I/usr/include" \

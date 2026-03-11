@@ -7,4 +7,7 @@ yum install xz xz-devel xz-libs \
     ruby ruby-devel \
     libcurl-devel curl libcurl \
     gcc-c++ \
+    automake \
+    zlib zlib-devel \
+    python python-devel \
     gmp-devel gmp

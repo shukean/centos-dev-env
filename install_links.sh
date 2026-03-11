@@ -67,5 +67,6 @@ if [[ $? -ne 0 ]]; then
 fi
 
 git config --global core.editor "vim"
+git config --global color.diff true
 
 echo "source $WORK_PATH/.local/bashrc"
